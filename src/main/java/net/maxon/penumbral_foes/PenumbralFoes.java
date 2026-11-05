@@ -1,6 +1,7 @@
 package net.maxon.penumbral_foes;
 
 import com.mojang.logging.LogUtils;
+import net.maxon.penumbral_foes.item.ModItems;
 import net.minecraft.client.Minecraft;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.food.FoodProperties;
@@ -40,6 +41,8 @@ public class PenumbralFoes
     public PenumbralFoes(FMLJavaModLoadingContext context)
     {
         IEventBus modEventBus = context.getModEventBus();
+
+        ModItems.register(modEventBus);
 
         modEventBus.addListener(this::commonSetup);
 
